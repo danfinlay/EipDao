@@ -1,0 +1,33 @@
+description: ''
+authors: []
+license: MIT
+keywords: []
+version: 0.0.1-dev
+tags: []
+layout:
+  sol_sources: ./src
+  build_dir: ./build
+  packages_directory: ./.dapple/packages/
+dependencies:
+  ds-whitelist: 'ipfs://QmPLxyFaBK9oPEUhy6sWPVPPLDaKQsvPoCAmudHbTkPQVd'
+  ds-data: 'ipfs://Qmd3K1LV81wPe6ZmdsT6WF7zjD6Sdc3Mm3SwTK9pQzpFZv'
+  ds-auth: 'ipfs://QmXLnhj5D4qHMNmkv5avF1c52cubR6p66uxVWsS2VHG8Y9'
+  ds-base: 'ipfs://QmQKBSWaZCtfFihj3RsGyYH6ijjQ9VwbjAu1Wa9tF3Y13r'
+  boardroom-rules: 'ipfs://QmV8TLcVvXxMspRo8cFXL7vrkTzw4H7xDuftMtFhYgRRpa'
+  devcon2tokenIdChecker: 'ipfs://QmZLrJ4V2k3wfWz4PNDwyZXmRJ7SaeE4CWUo2uPL9mjuUn'
+ignore: []
+name: gitmocracy
+dapple_version: 0.8.45
+environments:
+  develop:
+    objects:
+      authority:
+        value: '0xbd770416a3345f91e4b34576cb804a576fa48eb1'
+        type: >-
+          DSWhitelist[90d874d81482e8114d011d70bf7fed398725f76a4d26169bac94b6bcf70e95db]
+    type: internal
+    chain: ''
+  Testrpc:
+    objects: {}
+    type: TestRPC
+    chain: ''

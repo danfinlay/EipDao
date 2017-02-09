@@ -1,25 +1,18 @@
-# Gitmocracy
+# EIP Signal Voter
 
-It's a git-mocracy.  A git repository managed by a democracy!
-No relationship to Guantanamo Bay.
-
-Built on [Mango (decentralized git)](https://github.com/axic/mango).
 Uses [Boardroom smart contracts](https://github.com/boardroom-project/boardroom-contracts) for governance.
 Uses [DappHub DS-Auth](https://github.com/dapphub/ds-auth) for security.
 
-Made possible by [Ethereum](https://ethereum.org/), [IPFS](https://ipfs.io), and
+Made possible by [Ethereum](https://ethereum.org/) and [IPFS](https://ipfs.io).
 
-## Smart Contract Requirements
+## Local Installation
+
+```
+npm i -g dapple
+dapple pkg install # Not sure this is it!
+```
 
 ### Controller
-
-These methods are required by [Mango](https://github.com/axic/mango/blob/master/TECH.md#contract-interface)
-
-```
-function snapshotCount() constant returns (uint count)
-function getSnapshot(uint index) constant returns (string hash)
-function addSnapshot(string hash)
-```
 
 These methods are required by [Boardroom](https://github.com/boardroom-project/boardroom-contracts/blob/master/contracts/Rules.sol)
 
@@ -28,5 +21,12 @@ function hasWon(uint _proposalID) public constant returns (bool);
 function canVote(address _sender, uint _proposalID) public constant returns (bool);
 function canPropose(address _sender) public constant returns (bool);
 function votingWeightOf(address _sender, uint _proposalID) public constant returns (uint);
+```
+
+These methods exist on DS-Store, and need to be used by the controller:
+
+```
+function set(bytes32 key, bytes32 value)
+function get(bytes32 key)
 ```
 
