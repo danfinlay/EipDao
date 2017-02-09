@@ -3,13 +3,14 @@ pragma solidity ^0.4.0;
 import "ds-auth/DSAuth.sol";
 import "devcon2tokenIdChecker/IndividualityTokenInterface.sol";
 import "boardroom-rules/Rules.sol";
+import "./Interface.sol";
 
-contract EipVotesControllerInterface is Rules {
-
-}
-
-contract EipVotesController is DSAuth, Rules {
+contract EipVotesController is DSAuth, Rules, EipVotesInterface {
   address tokenAddress =	0xdd94De9cFE063577051A5eb7465D08317d8808B6;
+
+  function vote(uint _proposalId, bool _position) {
+
+  }
 
   function hasWon(uint _proposalID) public constant returns (bool) {
     return false;
