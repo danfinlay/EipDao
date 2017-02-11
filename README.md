@@ -1,7 +1,12 @@
 # EIP Signal Voter
 
-Uses [Boardroom smart contracts](https://github.com/boardroom-project/boardroom-contracts) for governance.
 Uses [DappHub DS-Auth](https://github.com/dapphub/ds-auth) for security.
+Voting rights are derived from [The Devcon 2 Token](https://github.com/pipermerriam/devcon2-token).
+
+For a given EIP, any number of `Proposals` can be submitted.
+A proposal has a link to an IPFS hash of a set of unit tests for the EIP proposal.
+These unit tests should thoroughly describe and enforce the proposed RPC method.
+These unit tests can then be used to derive democratic, real-time, automated compatability tables.
 
 Made possible by [Ethereum](https://ethereum.org/) and [IPFS](https://ipfs.io).
 
