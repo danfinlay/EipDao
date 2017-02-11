@@ -2,6 +2,7 @@ pragma solidity ^0.4.0;
 
 import "dapple/test.sol";
 import "./EipDaoFrontend.sol";
+import "./EipVotesController.sol";
 
 contract UnitTest is Test {
 
@@ -23,4 +24,6 @@ contract UnitTest is Test {
     address secondResult = dao.getController();
     assertEq(secondResult, second);
   }
+
 }
+

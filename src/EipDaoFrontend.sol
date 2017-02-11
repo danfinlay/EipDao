@@ -59,6 +59,7 @@ contract EipVotesFrontend is Rules, DSAuth, EipVotesInterface {
   function votingWeightOf(address _sender, uint _proposalID) public constant returns (uint) {
     return 1;
   }
+
 }
 
 
