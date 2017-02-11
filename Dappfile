@@ -32,3 +32,7 @@ environments:
     objects: {}
     type: TestRPC
     chain: ''
+  forketh:
+    objects: {}
+    type: internal
+    chain: ''

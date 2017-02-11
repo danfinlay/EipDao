@@ -38,5 +38,7 @@ Requires forking the main-net blockchain, to test integration with the Devcon2 t
 ➜  eip-dao git:(master) ✗ dapple chain new
 ? Chain name forketh
 ? Select chain type fork ETH
+
+$ dapple test
 ```
 
