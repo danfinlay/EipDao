@@ -30,3 +30,13 @@ function set(bytes32 key, bytes32 value)
 function get(bytes32 key)
 ```
 
+## Running Tests
+
+Requires forking the main-net blockchain, to test integration with the Devcon2 token contracts.
+
+```
+➜  eip-dao git:(master) ✗ dapple chain new
+? Chain name forketh
+? Select chain type fork ETH
+```
+
