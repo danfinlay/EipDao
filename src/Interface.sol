@@ -6,10 +6,10 @@ import "./EipVotesController.sol";
 
 contract EipVotesInterface is Rules {
 
+  function propose(bytes32 _proposalId);
   function setVote(bytes32 _proposalId, bool _position);
   function getVote(bytes32 _proposalId, address _voter) returns (bool);
-  function result(bytes32 _proposalId) returns (uint for, uint against);
-  function propose(bytes32 _proposalId);
+  function result(bytes32 _proposalId) returns (uint, uint);
 
 }
 

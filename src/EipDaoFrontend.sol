@@ -7,17 +7,17 @@ import "./Interface.sol";
 
 contract EipVotesFrontend is Rules, DSAuth, EipVotesInterface {
 
-  EipVotesInterface private _controller;
+  EipVotesInterface public controller;
 
   event Voted(address voter, bytes32 proposal, bool vote);
   event Proposed(address proposer, bytes32 proposal);
 
   function setController (address _newController) auth {
-    _controller = _newController;
+    controller = EipVotesInterface(_newController);
   }
 
-  function getController () returns (EipVotesInterface) {
-    return _controller;
+  function getController() auth returns (address) {
+    return controller;
   }
 
   function emitVoted(address _voter, bytes32 _proposal, bool _position) auth {
@@ -29,21 +29,36 @@ contract EipVotesFrontend is Rules, DSAuth, EipVotesInterface {
   }
 
   function propose(bytes32 _proposalId) {
-    _controller.propose(_proposalId);
+    controller.propose(_proposalId);
   }
 
   function setVote(bytes32 _proposalId, bool _position) {
-    _controller.setVote(_proposalId, _position);
+    controller.setVote(_proposalId, _position);
   }
 
   function getVote(bytes32 _proposalId, address _voter) returns (bool) {
-    return _controller.getVote(_proposalId, _voter);
+    return controller.getVote(_proposalId, _voter);
   }
 
-  function result(bytes32 _proposalId) returns (uint for, uint against) {
-    return _controller.result(_proposalId);
+  function result(bytes32 _proposalId) returns (uint, uint) {
+    return controller.result(_proposalId);
   }
 
+  function hasWon(uint _proposalID) public constant returns (bool) {
+    return false;
+  }
+
+  function canVote(address _sender, uint _proposalID) public constant returns (bool) {
+    return controller.canVote(_sender, _proposalID);
+  }
+
+  function canPropose(address _sender) public constant returns (bool) {
+    return controller.canPropose(_sender);
+  }
+
+  function votingWeightOf(address _sender, uint _proposalID) public constant returns (uint) {
+    return 1;
+  }
 }
 
 

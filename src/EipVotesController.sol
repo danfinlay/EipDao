@@ -4,9 +4,15 @@ import "ds-auth/DSAuth.sol";
 import "devcon2tokenIdChecker/IndividualityTokenInterface.sol";
 import "boardroom-rules/Rules.sol";
 import "./Interface.sol";
+import "./EipDaoFrontend.sol";
 
 contract EipVotesController is DSAuth, Rules, EipVotesInterface {
   address tokenAddress =	0xdd94De9cFE063577051A5eb7465D08317d8808B6;
+  EipVotesFrontend public frontend;
+
+  function setFrontend(address _newFrontend) auth {
+    frontend = EipVotesFrontend(_newFrontend);
+  }
 
   function vote(uint _proposalId, bool _position) {
 
