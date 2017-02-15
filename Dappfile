@@ -15,7 +15,7 @@ dependencies:
   ds-base: 'ipfs://QmQKBSWaZCtfFihj3RsGyYH6ijjQ9VwbjAu1Wa9tF3Y13r'
   boardroom-rules: 'ipfs://QmV8TLcVvXxMspRo8cFXL7vrkTzw4H7xDuftMtFhYgRRpa'
   devcon2tokenIdChecker: 'ipfs://QmZLrJ4V2k3wfWz4PNDwyZXmRJ7SaeE4CWUo2uPL9mjuUn'
-  sol-proposal-address-vote-db: 'ipfs://QmPNzXp2NGj1DFdinTrWNYKBgRas12hoVtbwZMxgPXWRMF'
+  sol-proposal-address-vote-db: 'ipfs://QmWoiNvnCUa9itHSaMnKRsmBLuwXoGcCoW55uNiHWY8Szj'
 ignore: []
 name: gitmocracy
 dapple_version: 0.8.45
