@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html>
+
+
+  <button>Press me!</button>
+
+
+  <script>
+
+    var address = '0xdd94de9cfe063577051a5eb7465d08317d8808b6'
+		var abi = [{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"}],"name":"approve","outputs":[{"name":"success","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"_tokenID","type":"bytes32"}],"name":"isTokenUpgraded","outputs":[{"name":"isUpgraded","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"}],"name":"transferFrom","outputs":[{"name":"success","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"}],"name":"transfer","outputs":[{"name":"success","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_owner","type":"address"},{"name":"_newOwner","type":"address"},{"name":"signature","type":"bytes"}],"name":"proxyUpgrade","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"success","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"devcon2Token","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"balance","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"tokenId","outputs":[{"name":"tokenID","type":"bytes32"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"_tokenID","type":"bytes32"}],"name":"ownerOf","outputs":[{"name":"owner","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"isTokenOwner","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[{"name":"success","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"upgradeCount","outputs":[{"name":"_amount","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"upgrade","outputs":[{"name":"success","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"}],"name":"approve","outputs":[{"name":"success","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"}],"name":"allowance","outputs":[{"name":"remaining","type":"uint256"}],"payable":false,"type":"function"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_owner","type":"address"},{"indexed":false,"name":"_tokenID","type":"bytes32"}],"name":"Mint","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_from","type":"address"},{"indexed":true,"name":"_to","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_owner","type":"address"},{"indexed":true,"name":"_spender","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Approval","type":"event"}]
+
+
+    var button = document.querySelector('button')
+    button.addEventListener('click', function() {
+
+			var dan = '0x55e2780588aa5000F464f700D2676fD0a22Ee160'
+      var Contract = web3.eth.contract(abi)
+			var token = Contract.at(address)
+
+			token.isTokenOwner(dan, function (err, result) {
+        if (err) {
+          return alert('There was a problem.')
+        }
+
+        var msg = result ? 'Dan has a token! Confirmed!' : 'I see no token. Using mainnet?'
+        alert(msg)
+			})
+
+    })
+
+
+  </script>
+
+
+</html>
+

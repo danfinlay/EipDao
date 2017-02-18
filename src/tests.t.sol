@@ -17,9 +17,14 @@ contract UnitTest is Test {
   }
 
   function testTokenHolder() {
-    address dan = 0x55e2780588aa5000F464f700D2676fD0a22Ee160;
-    bool result = dao.canVote(dan);
+    address piper = 0xd3CdA913deB6f67967B99D67aCDFa1712C293601;
+
+    bool result = dao.canVote(piper);
     assertTrue(result);
+
+    address dan = 0x55e2780588aa5000F464f700D2676fD0a22Ee160;
+    bool danResult = dao.canVote(dan);
+    assertTrue(danResult);
   }
 
 }

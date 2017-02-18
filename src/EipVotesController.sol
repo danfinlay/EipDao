@@ -7,7 +7,7 @@ import "./Interface.sol";
 import "sol-proposal-address-vote-db/proposal-vote-db.sol";
 
 contract EipVotesController is DSAuth {
-  address tokenAddress =	0xdd94De9cFE063577051A5eb7465D08317d8808B6;
+  address tokenAddress = 0xdd94de9cfe063577051a5eb7465d08317d8808b6;
   ProposalVoteDb db;
 
   function setDb(address _dbAddr) {
@@ -56,13 +56,9 @@ contract EipVotesController is DSAuth {
   }
 
   function hasToken(address _sender) returns (bool) {
+    //@info checking if `address _sender` has token
     IndividualityTokenInterface token = IndividualityTokenInterface(tokenAddress);
-    bytes32 tokenId = token.tokenId(tx.origin);
-    if (tokenId == 0x0) {
-      return false;
-    } else {
-      return true;
-    }
+    return token.isTokenOwner(msg.sender);
   }
 
 }

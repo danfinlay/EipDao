@@ -1,4 +1,4 @@
-# EIP Signal Voter
+# EIP DAO
 
 Uses [DappHub DS-Auth](https://github.com/dapphub/ds-auth) for security.
 Voting rights are derived from [The Devcon 2 Token](https://github.com/pipermerriam/devcon2-token).
