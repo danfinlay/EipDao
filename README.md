@@ -47,3 +47,17 @@ Requires forking the main-net blockchain, to test integration with the Devcon2 t
 $ dapple test
 ```
 
+## The Current Hangup
+
+A portion of the tests I haven't gotten working yet (I may not understand dapple properly).
+
+I've used Dapple so far to develop, because I began developing in the presence of some friends who helped make it, so I got great coaching during that time.
+
+I've now hit a wall, and I'm writing this to post on Dapple.chat.
+
+I tried forking the ETH chain, and then running `dapple test`, and what I find is that it fails to correctly assert that two known devcon 2 token holders hold tokens!
+
+I've even written up a quick `tokenTest.html` page to verify I do have a token, at the same address, using the same method as I'm trying in my solidity tests.
+
+My question, I guess, is why is my forked chain not representing the devcon2 token contract correctly?
+
